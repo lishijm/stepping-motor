@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\source.obj" 
+TO ".\Objects\stepping_motor" 
+PRINT(".\Listings\stepping_motor.m51") RAMSIZE(256) 
