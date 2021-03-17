@@ -1,9 +1,9 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/01/2021  19:06:48  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/17/2021  20:53:18  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\source.obj TO .\Objects\stepping_motor PRINT (.\Listings\st
->> epping_motor.m51) RAMSIZE (256)
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\source_0.1.obj TO .\Objects\stepping_motor PRINT (.\Listing
+>> s\stepping_motor.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -11,7 +11,7 @@ MEMORY MODEL: SMALL
 
 INPUT MODULES INCLUDED:
   .\Objects\STARTUP.obj (?C_STARTUP)
-  .\Objects\source.obj (SOURCE)
+  .\Objects\source_0.1.obj (SOURCE_0_1)
 
 
 LINK MAP OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
@@ -22,17 +22,17 @@ LINK MAP OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0008H     UNIT         ?DT?SOURCE
+            DATA    0008H     0008H     UNIT         ?DT?SOURCE_0_1
             IDATA   0010H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     0008H                  *** GAP ***
             CODE    000BH     0003H     ABSOLUTE     
-            CODE    000EH     00ABH     UNIT         ?PR?STATES?SOURCE
-            CODE    00B9H     0058H     UNIT         ?PR?TIMER0?SOURCE
-            CODE    0111H     0026H     UNIT         ?PR?MAIN?SOURCE
-            CODE    0137H     001EH     UNIT         ?PR?_DELAY?SOURCE
+            CODE    000EH     00ABH     UNIT         ?PR?STATES?SOURCE_0_1
+            CODE    00B9H     0058H     UNIT         ?PR?TIMER0?SOURCE_0_1
+            CODE    0111H     0026H     UNIT         ?PR?MAIN?SOURCE_0_1
+            CODE    0137H     001EH     UNIT         ?PR?_DELAY?SOURCE_0_1
             CODE    0155H     000CH     UNIT         ?C_C51STARTUP
 
 
@@ -44,22 +44,22 @@ SEGMENT
   +--> CALLED SEGMENT
 ---------------------
 ?C_C51STARTUP
-  +--> ?PR?MAIN?SOURCE
+  +--> ?PR?MAIN?SOURCE_0_1
 
 *** NEW ROOT ***************************************************
 
-?PR?TIMER0?SOURCE
-  +--> ?PR?STATES?SOURCE
+?PR?TIMER0?SOURCE_0_1
+  +--> ?PR?STATES?SOURCE_0_1
 
-?PR?STATES?SOURCE
-  +--> ?PR?_DELAY?SOURCE
+?PR?STATES?SOURCE_0_1
+  +--> ?PR?_DELAY?SOURCE_0_1
 
 
 
 SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
 
   VALUE           TYPE          NAME
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2021  19:06:48  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/17/2021  20:53:18  PAGE 2
 
 
   ----------------------------------
@@ -98,7 +98,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
   C:015EH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
-  -------         MODULE        SOURCE
+  -------         MODULE        SOURCE_0_1
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
@@ -119,7 +119,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
   D:008CH         PUBLIC        TH0
   B:00A8H.0       PUBLIC        EX0
   D:008AH         PUBLIC        TL0
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2021  19:06:48  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/17/2021  20:53:18  PAGE 3
 
 
   B:0090H.0       PUBLIC        pul
@@ -179,7 +179,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
   C:00AAH         LINE#         58
   C:00ABH         LINE#         59
   C:00ABH         LINE#         60
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2021  19:06:48  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/17/2021  20:53:18  PAGE 4
 
 
   C:00B1H         LINE#         61
@@ -224,7 +224,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
   C:0130H         LINE#         98
   C:0135H         LINE#         99
   -------         ENDPROC       MAIN
-  -------         ENDMOD        SOURCE
+  -------         ENDMOD        SOURCE_0_1
 
 Program Size: data=17.0 xdata=0 code=345
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
