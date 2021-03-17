@@ -1,4 +1,4 @@
 ".\Objects\STARTUP.obj",
-".\Objects\source_0.1.obj" 
+".\Objects\source_0.2.obj" 
 TO ".\Objects\stepping_motor" 
 PRINT(".\Listings\stepping_motor.m51") RAMSIZE(256) 

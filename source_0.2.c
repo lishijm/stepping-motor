@@ -5,13 +5,15 @@
 sbit pul=P1^0;
 sbit dir=P1^1;
 sbit en=P1^2;
+/*
 sbit s1=P3^4;
 sbit s2=P3^5;
 sbit s3=P3^6;
 sbit s4=P3^7;
+*/
 unint temp;
-unint ti;
-unint state,pause;
+//unint ti;
+//unint state,pause;
 
 void delay(unint delay){
     unint x,y;
@@ -19,7 +21,7 @@ void delay(unint delay){
         for(y=255;y>0;y--);
     }
 }
-
+/*
 void states(){
     P3=0Xfe;
     temp=P3;
@@ -82,19 +84,24 @@ void timer0() interrupt 1{
         }
     }
 }
-
+*/
+void encoder() interrupt 0{
+    pul=~pul;
+}
 void main(){
-    ti=0;
+    /*ti=0;
     TMOD=0x01;
     TH0=(65536-92)/256;
     TL0=(65536-92)%256;
-    EA=1;
-    ET0=1;
-    EX0=1;
-    TR0=1;
+    */
+    EA = 1;     //开启总中断
+    EX0 = 1;	 //开启0号外部中断
+    //ET0=1;
+    IT0 = 1;
+    //TR0=1;
     pul=0;
     dir=0;
-    pause=1;
-    state=20;
+    //pause=1;
+    //state=20;
     while(1);
 }
