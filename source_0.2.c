@@ -1,20 +1,19 @@
-//10KHz定时器，产生5KHz脉冲信号
 #include<reg52.h>
 #define unchar unsigned char
 #define unint unsigned int
 sbit pul=P1^0;
 sbit dir=P1^1;
 sbit en=P1^2;
+unint flag=0;
 /*
 sbit s1=P3^4;
 sbit s2=P3^5;
 sbit s3=P3^6;
 sbit s4=P3^7;
-*/
 unint temp;
-//unint ti;
-//unint state,pause;
-
+unint ti;
+unint state,pause;
+*/
 void delay(unint delay){
     unint x,y;
     for(x=delay;x>0;x--){
@@ -86,19 +85,30 @@ void timer0() interrupt 1{
 }
 */
 void encoder() interrupt 0{
+    ifflag=1;
     pul=~pul;
 }
+
+void encoder() interrupt 0{
+    if(flag==1){
+        dir=1;
+    }
+    pul=~pul;
+}
+
 void main(){
     /*ti=0;
     TMOD=0x01;
     TH0=(65536-92)/256;
     TL0=(65536-92)%256;
-    */
-    EA = 1;     //开启总中断
-    EX0 = 1;	 //开启0号外部中断
     //ET0=1;
-    IT0 = 1;
     //TR0=1;
+    */
+    EA=1;     //开启总中断
+    EX0=1;	 //开启0号外部中断
+    EX1=1;
+    IT0=1;
+    IT1=1;
     pul=0;
     dir=0;
     //pause=1;
