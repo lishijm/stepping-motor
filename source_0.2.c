@@ -84,14 +84,17 @@ void timer0() interrupt 1{
     }
 }
 */
-void encoder() interrupt 0{
-    ifflag=1;
+void encoder_a() interrupt 0{
+    if(flag==0){
+        flag=1;
+    }
     pul=~pul;
 }
 
-void encoder() interrupt 0{
+void encoder_b() interrupt 2{
     if(flag==1){
         dir=1;
+        flag=2;
     }
     pul=~pul;
 }
