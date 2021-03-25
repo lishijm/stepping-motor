@@ -7,6 +7,7 @@ sbit en=P1^2;
 sbit ecapin=P3^2;
 sbit ecbpin=P3^3;
 unint flag=0;
+unint count=0;
 
 void delay(unint delay){
     unint x,y;
@@ -22,6 +23,14 @@ void encoder_a() interrupt 0{
         flag=2;
     }
     pul=~pul;
+    pul=~pul;
+    pul=~pul;
+    pul=~pul;
+    count++;
+    if(count==5){
+        pul=~pul;
+        count=0;
+    }
 }
 
 void encoder_b() interrupt 2{
@@ -33,7 +42,6 @@ void encoder_b() interrupt 2{
         dir=0;
         flag=0;
     }
-    pul=~pul;
 }
 
 void main(){
