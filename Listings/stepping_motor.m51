@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/18/2021  22:40:22  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/25/2021  17:11:06  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -33,10 +33,10 @@ LINK MAP OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
                     000BH     0008H                  *** GAP ***
             CODE    0013H     0003H     ABSOLUTE     
             CODE    0016H     008CH     UNIT         ?C_C51STARTUP
-            CODE    00A2H     0022H     UNIT         ?PR?ENCODER_B?SOURCE_0_2
-            CODE    00C4H     001EH     UNIT         ?PR?_DELAY?SOURCE_0_2
-            CODE    00E2H     001EH     UNIT         ?PR?ENCODER_A?SOURCE_0_2
-            CODE    0100H     0010H     UNIT         ?PR?MAIN?SOURCE_0_2
+            CODE    00A2H     0029H     UNIT         ?PR?ENCODER_B?SOURCE_0_2
+            CODE    00CBH     001EH     UNIT         ?PR?_DELAY?SOURCE_0_2
+            CODE    00E9H     0015H     UNIT         ?PR?ENCODER_A?SOURCE_0_2
+            CODE    00FEH     0010H     UNIT         ?PR?MAIN?SOURCE_0_2
 
 
 
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
 
   -------         MODULE        ?C_STARTUP
   C:0016H         SEGMENT       ?C_C51STARTUP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/18/2021  22:40:22  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/25/2021  17:11:06  PAGE 2
 
 
   I:000AH         SEGMENT       ?STACK
@@ -100,11 +100,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
   D:00B0H         PUBLIC        P3
   B:00A8H.7       PUBLIC        EA
   D:00A8H         PUBLIC        IE
-  C:00C4H         PUBLIC        _delay
+  C:00CBH         PUBLIC        _delay
   D:00B8H         PUBLIC        IP
   D:0008H         PUBLIC        flag
-  C:00E2H         PUBLIC        encoder_a
-  C:0100H         PUBLIC        main
+  C:00E9H         PUBLIC        encoder_a
+  C:00FEH         PUBLIC        main
   C:00A2H         PUBLIC        encoder_b
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
@@ -115,61 +115,63 @@ SYMBOL TABLE OF MODULE:  .\Objects\stepping_motor (?C_STARTUP)
   B:0088H.2       PUBLIC        IT1
   B:0090H.0       PUBLIC        pul
   D:00C8H         PUBLIC        T2CON
+  B:00B0H.2       PUBLIC        ecapin
+  B:00B0H.3       PUBLIC        ecbpin
   D:00D0H         PUBLIC        PSW
   -------         PROC          _DELAY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/25/2021  17:11:06  PAGE 3
+
+
   D:0006H         SYMBOL        delay
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/18/2021  22:40:22  PAGE 3
-
-
   D:0006H         SYMBOL        x
   D:0004H         SYMBOL        y
   -------         ENDDO         
-  C:00C4H         LINE#         9
-  C:00C4H         LINE#         11
-  C:00CDH         LINE#         12
-  C:00DAH         LINE#         13
-  C:00E1H         LINE#         14
+  C:00CBH         LINE#         11
+  C:00CBH         LINE#         13
+  C:00D4H         LINE#         14
+  C:00E1H         LINE#         15
+  C:00E8H         LINE#         16
   -------         ENDPROC       _DELAY
   -------         PROC          ENCODER_A
-  C:00E2H         LINE#         15
-  C:00E4H         LINE#         16
-  C:00EAH         LINE#         17
-  C:00EFH         LINE#         18
-  C:00EFH         LINE#         19
-  C:00F7H         LINE#         20
-  C:00FBH         LINE#         21
-  C:00FBH         LINE#         22
-  C:00FDH         LINE#         23
+  C:00E9H         LINE#         17
+  C:00E9H         LINE#         18
+  C:00ECH         LINE#         19
+  C:00F2H         LINE#         20
+  C:00F2H         LINE#         21
+  C:00F5H         LINE#         22
+  C:00FBH         LINE#         23
+  C:00FBH         LINE#         24
+  C:00FDH         LINE#         25
   -------         ENDPROC       ENCODER_A
   -------         PROC          ENCODER_B
-  C:00A2H         LINE#         25
-  C:00A4H         LINE#         26
-  C:00AAH         LINE#         27
-  C:00AFH         LINE#         28
-  C:00B1H         LINE#         29
+  C:00A2H         LINE#         27
+  C:00A4H         LINE#         28
+  C:00AFH         LINE#         29
   C:00B1H         LINE#         30
-  C:00B9H         LINE#         31
-  C:00BBH         LINE#         32
-  C:00BFH         LINE#         33
-  C:00BFH         LINE#         34
-  C:00C1H         LINE#         35
+  C:00B5H         LINE#         31
+  C:00B5H         LINE#         32
+  C:00C0H         LINE#         33
+  C:00C2H         LINE#         34
+  C:00C6H         LINE#         35
+  C:00C6H         LINE#         36
+  C:00C8H         LINE#         37
   -------         ENDPROC       ENCODER_B
   -------         PROC          MAIN
-  C:0100H         LINE#         37
-  C:0100H         LINE#         38
-  C:0102H         LINE#         39
-  C:0104H         LINE#         40
-  C:0106H         LINE#         41
-  C:0108H         LINE#         42
-  C:010AH         LINE#         43
-  C:010CH         LINE#         44
-  C:010EH         LINE#         45
+  C:00FEH         LINE#         39
+  C:00FEH         LINE#         40
+  C:0100H         LINE#         41
+  C:0102H         LINE#         42
+  C:0104H         LINE#         43
+  C:0106H         LINE#         44
+  C:0108H         LINE#         45
+  C:010AH         LINE#         46
+  C:010CH         LINE#         47
   -------         ENDPROC       MAIN
   -------         ENDMOD        SOURCE_0_2
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY?SOURCE_0_2
 
-Program Size: data=11.0 xdata=0 code=264
+Program Size: data=11.0 xdata=0 code=262
 LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

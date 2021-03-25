@@ -4,6 +4,8 @@
 sbit pul=P1^0;
 sbit dir=P1^1;
 sbit en=P1^2;
+sbit ecapin=P3^2;
+sbit ecbpin=P3^3;
 unint flag=0;
 
 void delay(unint delay){
@@ -13,32 +15,32 @@ void delay(unint delay){
     }
 }
 void encoder_a() interrupt 0{
-    if(flag==0){
+    if(ecbpin==1){
         flag=1;
     }
-    if(flag==2){
-        flag=0;
+    if(ecbpin==0){
+        flag=2;
     }
     pul=~pul;
 }
 
 void encoder_b() interrupt 2{
-    if(flag==0){
-        flag=2;
-        dir=0;
-    }
-    if(flag==1){
+    if(flag==1&&ecapin==0){
         dir=1;
+        flag=0;
+    }
+    if(flag==2&&ecapin==1){
+        dir=0;
         flag=0;
     }
     pul=~pul;
 }
 
 void main(){
-    EA=1;     //开启总中断
+    EA=1;    //开启总中断
     EX0=1;	 //开启0号外部中断
     EX1=1;
-    IT0=1;
+    IT0=1;   //中断方式1，下降沿触发
     IT1=1;
     pul=0;
     dir=0;
