@@ -9,12 +9,6 @@ sbit ecbpin=P3^3;
 unint flag=0;
 unint count=0;
 
-void delay(unint delay){
-    unint x,y;
-    for(x=delay;x>0;x--){
-        for(y=255;y>0;y--);
-    }
-}
 void encoder_a() interrupt 0{
     if(ecbpin==1){
         flag=1;
