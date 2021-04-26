@@ -17,17 +17,17 @@ void encoder_a() interrupt 0{
         flag=2;
     }
     pul=~pul;
-    pul=~pul;
-    count++;
-    if(count==5){
+	pul=~pul;
+	count++;
+	if(count==5){
         pul=~pul;
+	    pul=~pul;
         pul=~pul;
+	    pul=~pul;
         pul=~pul;
-        pul=~pul;
-        pul=~pul;
-        pul=~pul;
+	    pul=~pul;  
         count=0;
-    }
+    }			
 }
 
 void encoder_b() interrupt 2{
